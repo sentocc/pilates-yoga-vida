@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilates &amp; Yoga Vida &mdash; Torrent, Valencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #5BADA8;
+      --teal-dark:  #2D7A74;
+      --teal-light: #DCF2F0;
+      --teal-mid:   #7DC5C0;
+      --cream:      #F0FAFA;
+      --cream-dark: #DFF2F0;
+      --pink:       #D966A0;
+      --pink-light: #EFA8CE;
+      --charcoal:   #2a2a2a;
+      --charcoal-mid:#4a4a4a;
+      --text-muted: #7a8a8a;
+      --white:      #ffffff;
+      --border:     #C5E6E3;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--charcoal); overflow-x: hidden; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+
+    /* ─── UTILS ─── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--teal); color: white;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--teal);
+      padding: 0.82rem 2rem; border-radius: 50px;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em;
+      text-decoration: none; border: 1.5px solid var(--teal); cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { background: var(--teal); color: white; transform: translateY(-2px); }
+    .btn-pink {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--pink); color: white;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.03em;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-pink:hover { background: var(--pink-light); transform: translateY(-2px); }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--teal); background: var(--teal-light);
+      padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--charcoal);
+    }
+    .section-title em { font-style: italic; color: var(--teal); }
+    .section-sub {
+      font-size: 1rem; color: var(--charcoal-mid); line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5%; height: 76px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(240,250,250,0.96);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 24px rgba(45,122,116,0.12);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-icon {
+      width: 38px; height: 38px;
+      background: var(--teal); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon i { color: white; font-size: 1rem; }
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 500; color: var(--teal-dark); line-height: 1;
+      letter-spacing: 0.03em;
+    }
+    .nav-logo-text span {
+      display: block; font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem; font-weight: 500; color: var(--text-muted);
+      letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--charcoal-mid); text-decoration: none; font-size: 0.88rem; font-weight: 400; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--teal) !important; color: white !important; padding: 0.52rem 1.4rem; border-radius: 50px; font-weight: 500 !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none; position: fixed; top: 76px; left: 0; right: 0;
+      background: var(--cream); flex-direction: column; padding: 2rem 5%; gap: 1.4rem;
+      border-top: 1px solid var(--border); z-index: 999;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--charcoal); text-decoration: none; font-size: 1.05rem; font-weight: 400; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 76px 5% 0;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: var(--teal-dark);
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; padding-right: 4rem; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1.5rem;
+    }
+    .hero-tag::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 4.8rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--charcoal); margin-bottom: 1.5rem;
+    }
+    .hero-title strong { font-weight: 500; color: var(--teal-dark); display: block; }
+    .hero-title em { font-style: italic; color: var(--teal); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--charcoal-mid); line-height: 1.75;
+      margin-bottom: 2.5rem; max-width: 440px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 3rem; }
+    .hero-stats { display: flex; gap: 2.5rem; }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 400; color: var(--charcoal); line-height: 1;
+    }
+    .hero-stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+    .hero-visual {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100%;
+    }
+    .hero-img-wrap {
+      width: 100%; max-width: 460px;
+      aspect-ratio: 3/4;
+      border-radius: 200px 200px 0 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+    }
+    .hero-img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, var(--teal-mid) 0%, var(--teal-dark) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+    }
+    .hero-img-placeholder i { font-size: 5rem; color: rgba(255,255,255,0.2); }
+    .hero-img-placeholder p { color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-badge {
+      position: absolute; bottom: 2rem; left: -1.5rem;
+      background: white; border-radius: 16px; padding: 1rem 1.4rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-badge-icon { width: 44px; height: 44px; background: var(--teal-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .hero-badge-icon i { color: var(--teal); font-size: 1.1rem; }
+    .hero-badge-text strong { display: block; font-size: 0.95rem; color: var(--charcoal); }
+    .hero-badge-text span { font-size: 0.75rem; color: var(--text-muted); }
+    .hero-stars { color: var(--teal); font-size: 0.7rem; margin-bottom: 2px; }
+
+    /* ─── STRIP ─── */
+    .strip {
+      background: var(--teal-dark); color: white;
+      padding: 1.1rem 5%;
+      display: flex; gap: 3rem; align-items: center; justify-content: center;
+      flex-wrap: wrap; overflow: hidden;
+    }
+    .strip-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; letter-spacing: 0.06em; opacity: 0.9; }
+    .strip-item i { color: var(--teal-mid); font-size: 0.85rem; }
+    .strip-sep { color: rgba(255,255,255,0.2); font-size: 1.2rem; }
+
+    /* ─── METODO ─── */
+    .metodo { padding: 6rem 5%; background: var(--white); }
+    .metodo-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto;
+    }
+    .metodo-visual { position: relative; }
+    .metodo-img {
+      width: 100%; aspect-ratio: 4/5; border-radius: 24px;
+      background: linear-gradient(160deg, var(--teal-light) 0%, var(--cream-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem; color: var(--teal);
+    }
+    .metodo-card-float {
+      position: absolute; top: 2.5rem; right: -2rem;
+      background: white; border-radius: 16px; padding: 1.2rem 1.5rem;
+      box-shadow: 0 8px 40px rgba(45,122,116,0.15);
+      min-width: 180px;
+    }
+    .metodo-card-float .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem; font-weight: 300; color: var(--teal); line-height: 1;
+    }
+    .metodo-card-float .lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+    .metodo-pillars { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 2.5rem; }
+    .pillar { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .pillar-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--teal-light); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pillar-icon i { color: var(--teal); font-size: 1.1rem; }
+    .pillar h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--charcoal); }
+    .pillar p { font-size: 0.9rem; color: var(--charcoal-mid); line-height: 1.6; }
+
+    /* ─── CLASES ─── */
+    .clases { padding: 6rem 5%; background: var(--cream); }
+    .clases-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
+    .clases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    .clase-card {
+      background: white; border-radius: 20px;
+      overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .clase-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(45,122,116,0.15); }
+    .clase-card-img {
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative;
+    }
+    .clase-card-img.c1 { background: linear-gradient(135deg, #7DC5C0 0%, #5BADA8 100%); }
+    .clase-card-img.c2 { background: linear-gradient(135deg, #5BADA8 0%, #2D7A74 100%); }
+    .clase-card-img.c3 { background: linear-gradient(135deg, #D966A0 0%, #B04880 100%); }
+    .clase-card-img.c4 { background: linear-gradient(135deg, #9DD8D4 0%, #6BBFBA 100%); }
+    .clase-card-img.c5 { background: linear-gradient(135deg, #2D7A74 0%, #1a5550 100%); }
+    .clase-card-img.c6 { background: linear-gradient(135deg, #B04880 0%, #D966A0 100%); }
+    .clase-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.2); color: white;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 50px;
+    }
+    .clase-badge.novedad { background: var(--pink); }
+    .clase-badge.popular { background: rgba(255,255,255,0.9); color: var(--teal-dark); }
+    .clase-card-body { padding: 1.5rem; }
+    .clase-card-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .clase-card-body p { font-size: 0.88rem; color: var(--charcoal-mid); line-height: 1.6; margin-bottom: 1rem; }
+    .clase-meta { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .clase-meta span { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-muted); }
+    .clase-meta i { color: var(--teal); }
+
+    /* ─── HORARIO ─── */
+    .horario { padding: 6rem 5%; background: var(--teal-dark); color: white; }
+    .horario-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+    .horario-header .section-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+    .horario-header .section-title { color: white; }
+    .horario-header .section-sub { color: rgba(255,255,255,0.65); }
+    .horario-wrap { max-width: 960px; margin: 0 auto; overflow-x: auto; }
+    .horario-table-wrap {
+      background: rgba(255,255,255,0.07); border-radius: 20px;
+      padding: 1.5rem 1.8rem; overflow-x: auto;
+    }
+    .horario-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    .horario-table th {
+      padding: 0.8rem 1rem; text-align: center;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .horario-table td {
+      padding: 0.55rem 0.6rem; text-align: center;
+      font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+    }
+    .horario-table tr:last-child td { border-bottom: none; }
+    .horario-table .hora {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      color: rgba(255,255,255,0.4); font-weight: 300; text-align: left; padding-left: 0;
+    }
+    .hslot {
+      background: rgba(255,255,255,0.1); border-radius: 8px;
+      padding: 0.35rem 0.6rem; display: inline-block;
+      font-size: 0.74rem; font-weight: 500; color: white; line-height: 1.4;
+    }
+    .hslot.yoga { background: rgba(125,197,192,0.25); color: #A8E4E0; }
+    .hslot.yin  { background: rgba(125,197,192,0.18); color: #A8E4E0; font-style: italic; }
+    .hslot.rmr  { background: rgba(217,102,160,0.3); color: #F0B8D8; }
+    .hslot.open {
+      background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.45); font-size: 0.7rem; font-style: italic; line-height: 1.4;
+      padding: 0.5rem 0.7rem;
+    }
+    .novedad-badge {
+      display: block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--pink-light); margin-bottom: 2px;
+    }
+    .horario-note {
+      display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .horario-note span { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .horario-note .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ─── FRASE ─── */
+    .frase {
+      background: var(--teal); color: white;
+      padding: 3rem 5%; text-align: center;
+    }
+    .frase blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 300; font-style: italic;
+      max-width: 700px; margin: 0 auto 0.75rem;
+      line-height: 1.5; opacity: 0.95;
+    }
+    .frase cite {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; opacity: 0.7; font-style: normal;
+    }
+
+    /* ─── INSTRUCTORES ─── */
+    .instructores { padding: 6rem 5%; background: var(--white); }
+    .instructores-header { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+    .instructores-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; max-width: 1000px; margin: 0 auto;
+    }
+    .instructor-card { text-align: center; }
+    .instructor-avatar {
+      width: 140px; height: 140px; border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(160deg, var(--teal-light), var(--cream-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; border: 3px solid var(--border);
+      position: relative;
+    }
+    .instructor-avatar::after {
+      content: ''; position: absolute; inset: -5px;
+      border-radius: 50%; border: 1.5px dashed var(--teal-mid);
+      opacity: 0.4;
+    }
+    .instructor-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .instructor-esp { font-size: 0.8rem; color: var(--teal); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .instructor-bio { font-size: 0.88rem; color: var(--charcoal-mid); line-height: 1.6; }
+    .instructor-cert { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.8rem; flex-wrap: wrap; }
+    .cert-tag {
+      font-size: 0.7rem; background: var(--teal-light); color: var(--teal-dark);
+      padding: 0.2rem 0.6rem; border-radius: 50px; font-weight: 500;
+    }
+
+    /* ─── PRECIOS ─── */
+    .precios { padding: 6rem 5%; background: var(--cream); }
+    .precios-header { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+    .precios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 980px; margin: 0 auto;
+    }
+    .precio-card {
+      background: white; border-radius: 24px;
+      padding: 2.5rem 2rem; text-align: center;
+      border: 1.5px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .precio-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(45,122,116,0.12); }
+    .precio-card.featured { background: var(--teal-dark); color: white; border-color: var(--teal-dark); }
+    .precio-card.featured .precio-name,
+    .precio-card.featured .precio-desc,
+    .precio-card.featured .precio-item { color: rgba(255,255,255,0.75); }
+    .precio-card.featured .precio-item i { color: var(--teal-mid); }
+    .precio-featured-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--teal); color: white;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 1.2rem; border-radius: 50px;
+    }
+    .precio-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .precio-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; margin-bottom: 0.3rem; color: var(--charcoal); }
+    .precio-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .precio-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; line-height: 1; margin-bottom: 0.3rem; }
+    .precio-price sup { font-size: 1.5rem; vertical-align: top; margin-top: 0.5rem; }
+    .precio-period { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .precio-card.featured .precio-period { color: rgba(255,255,255,0.5); }
+    .precio-items { list-style: none; text-align: left; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .precio-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.88rem; color: var(--charcoal-mid); }
+    .precio-item i { color: var(--teal); font-size: 0.85rem; flex-shrink: 0; }
+    .precio-card .btn-outline { width: 100%; justify-content: center; }
+    .precio-card .btn-pink  { width: 100%; justify-content: center; }
+    .precio-card .btn-primary { width: 100%; justify-content: center; }
+
+    /* ─── TESTIMONIOS ─── */
+    .testimonios { padding: 6rem 5%; background: var(--white); }
+    .testimonios-header { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+    .testimonios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1050px; margin: 0 auto;
+    }
+    .testi-card {
+      background: var(--cream); border-radius: 20px; padding: 2rem;
+      border: 1px solid var(--border);
+    }
+    .testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--teal); line-height: 0.8; margin-bottom: 0.5rem; }
+    .testi-text { font-size: 0.92rem; color: var(--charcoal-mid); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+    .testi-stars { color: var(--teal); font-size: 0.75rem; margin-bottom: 0.8rem; }
+    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .testi-name { font-weight: 600; font-size: 0.9rem; color: var(--charcoal); }
+    .testi-since { font-size: 0.75rem; color: var(--text-muted); }
+    .testi-google { display: flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem; }
+    .testi-google i { color: #4285f4; }
+
+    /* ─── CTA ─── */
+    .cta-section { padding: 6rem 5%; background: var(--cream); text-align: center; }
+    .cta-inner {
+      background: var(--teal-dark); border-radius: 32px;
+      padding: 5rem 3rem; max-width: 900px; margin: 0 auto;
+      position: relative; overflow: hidden;
+    }
+    .cta-inner::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04);
+    }
+    .cta-inner::after {
+      content: ''; position: absolute; bottom: -60px; left: -60px;
+      width: 240px; height: 240px; border-radius: 50%; background: rgba(255,255,255,0.03);
+    }
+    .cta-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+    .cta-title { color: white; margin-bottom: 1rem; }
+    .cta-sub { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 2.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: white; color: var(--teal-dark);
+      padding: 0.9rem 2.2rem; border-radius: 50px;
+      font-size: 0.92rem; font-weight: 600;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+    .btn-outline-white {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: white;
+      padding: 0.88rem 2.2rem; border-radius: 50px;
+      font-size: 0.92rem; font-weight: 500;
+      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.4);
+      transition: all 0.3s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 4rem 5% 2rem; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; max-width: 1100px; margin: 0 auto 3rem;
+    }
+    .footer-brand .nav-logo-text { color: white; }
+    .footer-brand .nav-logo-text span { color: rgba(255,255,255,0.4); }
+    .footer-brand p { font-size: 0.87rem; line-height: 1.7; margin: 1.2rem 0; max-width: 280px; }
+    .footer-socials { display: flex; gap: 0.8rem; }
+    .footer-social {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 0.85rem;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .footer-social:hover { background: var(--teal); color: white; }
+    .footer-col h4 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.87rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--teal-light); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.87rem; margin-bottom: 0.7rem; }
+    .footer-contact-item i { color: var(--teal-mid); margin-top: 2px; font-size: 0.85rem; flex-shrink: 0; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem; max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-bottom a { color: var(--teal-mid); text-decoration: none; }
+
+    /* ─── WA FLOAT ─── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+    .wa-float-label {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: var(--charcoal); color: white;
+      font-size: 0.78rem; font-weight: 500; white-space: nowrap;
+      padding: 0.4rem 0.9rem; border-radius: 50px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .wa-float:hover .wa-float-label { opacity: 1; }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: calc(76px + 2rem); min-height: auto; }
+      .hero::before { display: none; }
+      .hero-content { padding-right: 0; text-align: center; }
+      .hero-tag { justify-content: center; }
+      .hero-sub { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { display: none; }
+      .metodo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .metodo-visual { display: none; }
+      .clases-grid { grid-template-columns: 1fr 1fr; }
+      .instructores-grid { grid-template-columns: 1fr 1fr; }
+      .precios-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .testimonios-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .clases-grid { grid-template-columns: 1fr; }
+      .instructores-grid { grid-template-columns: 1fr; }
+      .strip { gap: 1.5rem; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .cta-inner { padding: 3.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+    <div class="nav-logo-text">Pilates &amp; Yoga Vida<span>Torrent &bull; Valencia</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#clases">Clases</a></li>
+    <li><a href="#horario">Horario</a></li>
+    <li><a href="#instructores">Equipo</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#contacto" class="nav-cta">Reservar clase</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Men&uacute;">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#clases" onclick="closeMobile()">Clases</a>
+  <a href="#horario" onclick="closeMobile()">Horario</a>
+  <a href="#instructores" onclick="closeMobile()">Equipo</a>
+  <a href="#precios" onclick="closeMobile()">Precios</a>
+  <a href="#contacto" onclick="closeMobile()" class="btn-primary" style="text-align:center;justify-content:center">Reservar clase</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Torrent &bull; Valencia</div>
+    <h1 class="hero-title">
+      Cuida tu cuerpo.<br>
+      <strong>Transforma</strong>
+      <em>tu vida.</em>
+    </h1>
+    <p class="hero-sub">Clases grupales de pilates y yoga para el bienestar f&iacute;sico y mental. Un espacio donde cada persona es atendida con cari&ntilde;o, empat&iacute;a y cercan&iacute;a &mdash; porque aqu&iacute; todo el mundo tiene su sitio.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Reserva tu clase</a>
+      <a href="#clases" class="btn-outline">Ver clases</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">+100</div>
+        <div class="hero-stat-lbl">personas que confían en nosotras</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5.0</div>
+        <div class="hero-stat-lbl"><i class="fa-solid fa-star" style="color:var(--teal);font-size:0.7rem"></i> en Google</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">L&ndash;V</div>
+        <div class="hero-stat-lbl">mañana y tarde</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-img-placeholder">
+        <i class="fa-solid fa-person-praying"></i>
+        <p>Foto del estudio</p>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon"><i class="fa-solid fa-star"></i></div>
+      <div class="hero-badge-text">
+        <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <strong>+100 personas felices</strong>
+        <span>se sienten como en casa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><i class="fa-solid fa-heart"></i> Bienestar f&iacute;sico y mental</div>
+  <div class="strip-sep">|</div>
+  <div class="strip-item"><i class="fa-solid fa-check-circle"></i> Clases grupales adaptadas</div>
+  <div class="strip-sep">|</div>
+  <div class="strip-item"><i class="fa-solid fa-user-group"></i> +100 alumnos</div>
+  <div class="strip-sep">|</div>
+  <div class="strip-item"><i class="fa-solid fa-hands-holding-heart"></i> Trato cercano y familiar</div>
+  <div class="strip-sep">|</div>
+  <div class="strip-item"><i class="fa-brands fa-instagram"></i> @vidapilatesyoga</div>
+</div>
+
+<!-- MÉTODO -->
+<section class="metodo" id="metodo">
+  <div class="metodo-grid">
+    <div class="metodo-visual reveal">
+      <div class="metodo-img">
+        <i class="fa-solid fa-spa"></i>
+      </div>
+      <div class="metodo-card-float">
+        <div class="num">5.0</div>
+        <div class="lbl">valoraci&oacute;n en Google</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="section-tag">Nuestro enfoque</span>
+      <h2 class="section-title" style="margin-bottom:1rem">Movimiento con <em>cari&ntilde;o</em><br>y prop&oacute;sito.</h2>
+      <p class="section-sub" style="margin-bottom:2rem">En Pilates &amp; Yoga Vida trabajamos el bienestar f&iacute;sico y mental desde la empat&iacute;a y la cercan&iacute;a. Nuestras clases son grupales, pero cada persona es atendida de forma individual &mdash; porque sabemos que todos partimos de un punto diferente.</p>
+      <div class="metodo-pillars">
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-person-walking"></i></div>
+          <div>
+            <h4>Especialistas en salud f&iacute;sica</h4>
+            <p>Trabajamos con personas con problemas de espalda, osteoporosis, sistema nervioso y movilidad reducida. Adaptamos cada clase para que puedas moverte sin riesgos y con resultados reales.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-hands-holding-heart"></i></div>
+          <div>
+            <h4>Cari&ntilde;o y empat&iacute;a en cada clase</h4>
+            <p>Aqu&iacute; no eres un n&uacute;mero. Nuestro equipo te conoce, entiende tu cuerpo y te acompa&ntilde;a con dedicaci&oacute;n genuina. M&aacute;s de 100 personas ya lo sienten as&iacute;.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-house-heart"></i></div>
+          <div>
+            <h4>Un ambiente familiar y acogedor</h4>
+            <p>Nuestros alumnos dicen que se sienten como en casa. Porque eso es exactamente lo que queremos crear: un espacio seguro, c&aacute;lido y sin juicios donde dar lo mejor de ti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASES -->
+<section class="clases" id="clases">
+  <div class="clases-header reveal">
+    <span class="section-tag">Nuestras clases</span>
+    <h2 class="section-title" style="margin-bottom:1rem">Encuentra <em>tu clase</em> perfecta</h2>
+    <p class="section-sub" style="margin:0 auto">Clases grupales pensadas para el bienestar f&iacute;sico y mental. Aunque trabajamos en grupo, cada persona va a su ritmo &mdash; especialmente indicadas para problemas de espalda, osteoporosis, movilidad y sistema nervioso.</p>
+  </div>
+  <div class="clases-grid">
+    <div class="clase-card reveal">
+      <div class="clase-card-img c1">
+        <i class="fa-solid fa-person-praying" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge popular">M&aacute;s popular</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Pilates</h3>
+        <p>M&eacute;todo original de Joseph Pilates. Mejora tu postura, fortalece el core y gana flexibilidad. Disponible en m&uacute;ltiples horarios de lunes a jueves.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Todos los niveles</span>
+          <span><i class="fa-regular fa-clock"></i> L&ndash;J</span>
+        </div>
+      </div>
+    </div>
+    <div class="clase-card reveal">
+      <div class="clase-card-img c2">
+        <i class="fa-solid fa-spa" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge" style="background:rgba(255,255,255,0.2)">Relajaci&oacute;n</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Yoga</h3>
+        <p>Une respiraci&oacute;n, movimiento y conciencia corporal. Una pr&aacute;ctica que equilibra cuerpo y mente, adaptada a cualquier nivel.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Todos los niveles</span>
+          <span><i class="fa-regular fa-clock"></i> L, X</span>
+        </div>
+      </div>
+    </div>
+    <div class="clase-card reveal">
+      <div class="clase-card-img c3">
+        <i class="fa-solid fa-moon" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge novedad">&#x2728; Novedad</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Yoga RMR</h3>
+        <p>Nueva clase de Yoga enfocada en la relajaci&oacute;n profunda, la movilidad y la respiraci&oacute;n consciente. Una pr&aacute;ctica restauradora &uacute;nica.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Todos los niveles</span>
+          <span><i class="fa-regular fa-clock"></i> Ma, J &mdash; 15:15</span>
+        </div>
+      </div>
+    </div>
+    <div class="clase-card reveal">
+      <div class="clase-card-img c4">
+        <i class="fa-solid fa-person-walking" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge" style="background:rgba(255,255,255,0.2)">Suave</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Yin Yoga</h3>
+        <p>Pr&aacute;ctica lenta y meditativa que trabaja la flexibilidad profunda y la calma interior. Perfecta para compensar el ritmo acelerado del d&iacute;a a d&iacute;a.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Todos los niveles</span>
+          <span><i class="fa-regular fa-clock"></i> Viernes &mdash; 10:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="clase-card reveal">
+      <div class="clase-card-img c5">
+        <i class="fa-solid fa-seedling" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge" style="background:rgba(255,255,255,0.2)">Principiantes</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Para todo el mundo</h3>
+        <p>Problemas de espalda, osteoporosis, poca movilidad o simplemente empezar desde cero. Nuestras clases est&aacute;n pensadas para ti, sea cual sea tu punto de partida.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Sin experiencia</span>
+          <span><i class="fa-regular fa-clock"></i> Consultar</span>
+        </div>
+      </div>
+    </div>
+    <div class="clase-card reveal">
+      <div class="clase-card-img c6">
+        <i class="fa-solid fa-user" style="color:rgba(255,255,255,0.5)"></i>
+        <span class="clase-badge novedad">Premium</span>
+      </div>
+      <div class="clase-card-body">
+        <h3>Clase Privada</h3>
+        <p>Sesi&oacute;n individual con atenci&oacute;n 100% personalizada. El instructor se adapta completamente a tus objetivos, lesiones o necesidades espec&iacute;ficas.</p>
+        <div class="clase-meta">
+          <span><i class="fa-solid fa-signal"></i> Cualquier nivel</span>
+          <span><i class="fa-regular fa-clock"></i> A convenir</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIO -->
+<section class="horario" id="horario">
+  <div class="horario-header reveal">
+    <span class="section-tag">Horario &mdash; Curso 2025&ndash;2026</span>
+    <h2 class="section-title" style="margin-bottom:1rem">Encuentra tu <em>momento ideal</em></h2>
+    <p class="section-sub" style="margin:0 auto;color:rgba(255,255,255,0.6)">Clases de lunes a viernes. Reserva tu plaza por WhatsApp o por tel&eacute;fono.</p>
+  </div>
+  <div class="horario-wrap reveal">
+    <div class="horario-table-wrap">
+    <table class="horario-table">
+      <thead>
+        <tr>
+          <th style="text-align:left">Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Mi&eacute;rcoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="hora">07:45</td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">08:30</td>
+          <td></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">09:15</td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">10:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="hslot yin">Yin Yoga</span></td>
+        </tr>
+        <tr>
+          <td class="hora">10:30</td>
+          <td><span class="hslot yoga">Yoga</span></td>
+          <td></td>
+          <td><span class="hslot yoga">Yoga</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">15:15</td>
+          <td></td>
+          <td><span class="hslot rmr"><span class="novedad-badge">&#x2728; Novedad</span>Yoga RMR</span></td>
+          <td></td>
+          <td><span class="hslot rmr"><span class="novedad-badge">&#x2728; Novedad</span>Yoga RMR</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">17:00</td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot open">Abiertas a nuevas propuestas</span></td>
+        </tr>
+        <tr>
+          <td class="hora">18:15</td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="hora">19:30</td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td><span class="hslot">Pilates</span></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="horario-note">
+      <span><span class="dot" style="background:rgba(255,255,255,0.15)"></span> Pilates</span>
+      <span><span class="dot" style="background:rgba(125,197,192,0.35)"></span> Yoga</span>
+      <span><span class="dot" style="background:rgba(125,197,192,0.2)"></span> Yin Yoga</span>
+      <span><span class="dot" style="background:rgba(217,102,160,0.4)"></span> Yoga RMR &mdash; Novedad</span>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE JOSEPH PILATES -->
+<div class="frase">
+  <blockquote>&ldquo;La buena condici&oacute;n f&iacute;sica es el primer requisito para la felicidad.&rdquo;</blockquote>
+  <cite>Joseph Pilates</cite>
+</div>
+
+<!-- INSTRUCTORES -->
+<section class="instructores" id="instructores">
+  <div class="instructores-header reveal">
+    <span class="section-tag">Nuestro equipo</span>
+    <h2 class="section-title" style="margin-bottom:1rem">Instructores <em>apasionados</em> por el bienestar</h2>
+  </div>
+  <div class="instructores-grid">
+    <div class="instructor-card reveal">
+      <div class="instructor-avatar">&#129338;</div>
+      <h3>Directora del Estudio</h3>
+      <div class="instructor-esp">Pilates &amp; Bienestar</div>
+      <p class="instructor-bio">Amplia experiencia en pilates y un enfoque cercano y profesional. Comprometida con el progreso de cada alumno desde el primer d&iacute;a.</p>
+      <div class="instructor-cert">
+        <span class="cert-tag">Pilates Certificada</span>
+        <span class="cert-tag">Todos los niveles</span>
+      </div>
+    </div>
+    <div class="instructor-card reveal">
+      <div class="instructor-avatar">&#129338;</div>
+      <h3>Instructora de Yoga</h3>
+      <div class="instructor-esp">Yoga &bull; Yin Yoga &bull; RMR</div>
+      <p class="instructor-bio">Formada en diferentes estilos de yoga, transmite calma y precisi&oacute;n en cada clase. Especialista en las nuevas pr&aacute;cticas restauradoras.</p>
+      <div class="instructor-cert">
+        <span class="cert-tag">Yoga Certificada</span>
+        <span class="cert-tag">Yoga RMR</span>
+        <span class="cert-tag">Yin Yoga</span>
+      </div>
+    </div>
+    <div class="instructor-card reveal">
+      <div class="instructor-avatar">&#129338;</div>
+      <h3>Instructora de Pilates</h3>
+      <div class="instructor-esp">Pilates Mat &amp; Aparatos</div>
+      <p class="instructor-bio">Especialista en pilates y trabajo postural. Ayuda a cada alumno a descubrir su potencial con paciencia y dedicaci&oacute;n.</p>
+      <div class="instructor-cert">
+        <span class="cert-tag">Pilates Mat</span>
+        <span class="cert-tag">Pilates Aparatos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="precios" id="precios">
+  <div class="precios-header reveal">
+    <span class="section-tag">Tarifas</span>
+    <h2 class="section-title" style="margin-bottom:1rem">Elige tu <em>bono</em></h2>
+    <p class="section-sub" style="margin:0 auto">Precios pensados para que puedas practicar sin excusas. Cons&uacute;ltanos por WhatsApp y te asesoramos sin compromiso.</p>
+  </div>
+  <div class="precios-grid">
+    <div class="precio-card reveal">
+      <div class="precio-icon">&#127807;</div>
+      <div class="precio-name">Bono Inicio</div>
+      <div class="precio-desc">Para probar y empezar</div>
+      <div class="precio-price"><sup>&euro;</sup>??</div>
+      <div class="precio-period">clases sueltas</div>
+      <ul class="precio-items">
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Clases sin compromiso</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Pilates y yoga incluidos</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Horario libre</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Sin permanencia</li>
+      </ul>
+      <a href="#contacto" class="btn-outline">Consultar precio</a>
+    </div>
+    <div class="precio-card featured reveal">
+      <div class="precio-featured-badge">M&aacute;s popular</div>
+      <div class="precio-icon">&#127808;</div>
+      <div class="precio-name">Bono Mensual</div>
+      <div class="precio-desc">La elecci&oacute;n de nuestros alumnos</div>
+      <div class="precio-price" style="color:var(--teal-mid)"><sup>&euro;</sup>??</div>
+      <div class="precio-period">/ mes</div>
+      <ul class="precio-items">
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Clases ilimitadas</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Pilates y yoga incluidos</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Todos los horarios</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Seguimiento personalizado</li>
+      </ul>
+      <a href="#contacto" class="btn-pink">Consultar precio</a>
+    </div>
+    <div class="precio-card reveal">
+      <div class="precio-icon">&#9734;</div>
+      <div class="precio-name">Clase Privada</div>
+      <div class="precio-desc">M&aacute;xima personalizaci&oacute;n</div>
+      <div class="precio-price"><sup>&euro;</sup>??</div>
+      <div class="precio-period">/ sesi&oacute;n individual</div>
+      <ul class="precio-items">
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Sesi&oacute;n 100% personalizada</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Instructor dedicado</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Adaptada a tus objetivos</li>
+        <li class="precio-item"><i class="fa-solid fa-check"></i> Seguimiento de progreso</li>
+      </ul>
+      <a href="#contacto" class="btn-primary">Reservar sesi&oacute;n</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="testimonios">
+  <div class="testimonios-header reveal">
+    <span class="section-tag">Opiniones</span>
+    <h2 class="section-title" style="margin-bottom:1rem">Lo que dicen <em>nuestros alumnos</em></h2>
+  </div>
+  <div class="testimonios-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">&ldquo;</div>
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-text">Llevo a&ntilde;os con problemas de espalda y desde que vengo a Pilates &amp; Yoga Vida he notado una mejora enorme. Lo que m&aacute;s valoro es que adaptan cada ejercicio a lo que necesito. Me siento esc uchada y cuidada.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">&#128105;</div>
+        <div>
+          <div class="testi-name">Mar&iacute;a L.</div>
+          <div class="testi-since">Alumna de pilates</div>
+          <div class="testi-google"><i class="fa-brands fa-google"></i> Rese&ntilde;a en Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">&ldquo;</div>
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-text">Vine con osteoporosis y mucho miedo de lesionarme. Desde el primer d&iacute;a me explicaron qu&eacute; pod&iacute;a y qu&eacute; no pod&iacute;a hacer. El trato es incre&iacute;blemente cercano, ya las considero parte de mi familia.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">&#128105;</div>
+        <div>
+          <div class="testi-name">Carmen R.</div>
+          <div class="testi-since">Alumna de yoga</div>
+          <div class="testi-google"><i class="fa-brands fa-google"></i> Rese&ntilde;a en Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">&ldquo;</div>
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-text">Vine buscando mejorar mi movilidad y me encontr&eacute; con mucho m&aacute;s: un grupo de personas estupendas y un ambiente de lo m&aacute;s familiar. Aqu&iacute; te sientes como en casa desde el primer d&iacute;a. Totalmente recomendable.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">&#128104;</div>
+        <div>
+          <div class="testi-name">Javier M.</div>
+          <div class="testi-since">Alumno de pilates</div>
+          <div class="testi-google"><i class="fa-brands fa-google"></i> Rese&ntilde;a en Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <div class="cta-inner reveal">
+    <span class="section-tag cta-tag">Empieza hoy</span>
+    <h2 class="section-title cta-title" style="margin-bottom:1rem">Ven a conocernos.<br><em>Te estar&aacute;bamos esperando.</em></h2>
+    <p class="cta-sub section-sub">Da igual tu edad, tu nivel o tu condici&oacute;n f&iacute;sica. Escr&iacute;benos y te contamos c&oacute;mo podemos ayudarte. M&aacute;s de 100 personas ya forman parte de nuestra familia.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/34677231350" target="_blank" class="btn-white"><i class="fa-brands fa-whatsapp" style="color:#25d366;font-size:1.1rem"></i> Escribir por WhatsApp</a>
+      <a href="tel:+34677231350" class="btn-outline-white"><i class="fa-solid fa-phone"></i> 677 231 350</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+        <div class="nav-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="nav-logo-text">Pilates &amp; Yoga Vida<span>Torrent &bull; Valencia</span></div>
+      </a>
+      <p>Un espacio dedicado al pilates, el yoga y el bienestar integral. Instalaciones modernas y un equipo comprometido con tu progreso.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/vidapilatesyoga" target="_blank" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Clases</h4>
+      <ul>
+        <li><a href="#">Pilates</a></li>
+        <li><a href="#">Yoga</a></li>
+        <li><a href="#">Yin Yoga</a></li>
+        <li><a href="#">Yoga RMR</a></li>
+        <li><a href="#">Clases Privadas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Estudio</h4>
+      <ul>
+        <li><a href="#">Nuestro enfoque</a></li>
+        <li><a href="#">El equipo</a></li>
+        <li><a href="#">Instalaciones</a></li>
+        <li><a href="#">Tarifas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Cam&iacute; Reial, 130<br>46900 Torrent, Valencia</span></div>
+      <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>677 231 350</span></div>
+      <div class="footer-contact-item"><i class="fa-brands fa-instagram"></i><span>@vidapilatesyoga</span></div>
+      <div class="footer-contact-item"><i class="fa-regular fa-clock"></i><span>L&ndash;V 7:45&ndash;10:30<br>L&ndash;J 15:15&ndash;20:30<br>S&aacute;b y Dom: Cerrado</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Pilates &amp; Yoga Vida &bull; Todos los derechos reservados</p>
+    <p>Dise&ntilde;ado por <a href="#">Sento Web</a></p>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/34677231350" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-float-label">Reservar clase</span>
+</a>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  function closeMobile() {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
