@@ -192,6 +192,7 @@
     }
     .hero-img-placeholder i { font-size: 5rem; color: rgba(255,255,255,0.2); }
     .hero-img-placeholder p { color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-img-real { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .hero-badge {
       position: absolute; bottom: 2rem; left: -1.5rem;
       background: white; border-radius: 16px; padding: 1rem 1.4rem;
@@ -224,10 +225,9 @@
     .metodo-visual { position: relative; }
     .metodo-img {
       width: 100%; aspect-ratio: 4/5; border-radius: 24px;
-      background: linear-gradient(160deg, var(--teal-light) 0%, var(--cream-dark) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 7rem; color: var(--teal);
+      overflow: hidden; position: relative;
     }
+    .metodo-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .metodo-card-float {
       position: absolute; top: 2.5rem; right: -2rem;
       background: white; border-radius: 16px; padding: 1.2rem 1.5rem;
@@ -249,6 +249,30 @@
     .pillar-icon i { color: var(--teal); font-size: 1.1rem; }
     .pillar h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--charcoal); }
     .pillar p { font-size: 0.9rem; color: var(--charcoal-mid); line-height: 1.6; }
+
+    /* ─── GALERÍA ─── */
+    .galeria { padding: 5rem 5%; background: var(--cream); }
+    .galeria-header { text-align: center; margin-bottom: 2.5rem; }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .galeria-grid .g-item { border-radius: 16px; overflow: hidden; }
+    .galeria-grid .g-item.grande { grid-column: span 2; }
+    .galeria-grid .g-item img {
+      width: 100%; height: 280px; object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .galeria-grid .g-item.grande img { height: 280px; }
+    .galeria-grid .g-item img:hover { transform: scale(1.03); }
+    @media (max-width: 700px) {
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+      .galeria-grid .g-item.grande { grid-column: span 2; }
+    }
 
     /* ─── CLASES ─── */
     .clases { padding: 6rem 5%; background: var(--cream); }
@@ -627,10 +651,7 @@
   </div>
   <div class="hero-visual">
     <div class="hero-img-wrap">
-      <div class="hero-img-placeholder">
-        <i class="fa-solid fa-person-praying"></i>
-        <p>Foto del estudio</p>
-      </div>
+      <img class="hero-img-real" src="imgs/foto-9.jpg" alt="Sala principal Pilates &amp; Yoga Vida" />
     </div>
     <div class="hero-badge">
       <div class="hero-badge-icon"><i class="fa-solid fa-star"></i></div>
@@ -661,7 +682,7 @@
   <div class="metodo-grid">
     <div class="metodo-visual reveal">
       <div class="metodo-img">
-        <i class="fa-solid fa-spa"></i>
+        <img src="imgs/foto-10.jpg" alt="Recepci&oacute;n Pilates &amp; Yoga Vida" />
       </div>
       <div class="metodo-card-float">
         <div class="num">5.0</div>
@@ -695,6 +716,31 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="galeria reveal">
+  <div class="galeria-header">
+    <span class="section-tag">Nuestras instalaciones</span>
+    <h2 class="section-title" style="margin-bottom:0">Un espacio <em>pensado para ti</em></h2>
+  </div>
+  <div class="galeria-grid">
+    <div class="g-item grande">
+      <img src="imgs/foto-11.jpg" alt="Sala principal" />
+    </div>
+    <div class="g-item">
+      <img src="imgs/foto-7.jpg" alt="Zona de relajaci&oacute;n" />
+    </div>
+    <div class="g-item">
+      <img src="imgs/foto-3.jpg" alt="Sala de pilates" />
+    </div>
+    <div class="g-item">
+      <img src="imgs/foto-2.jpg" alt="Material pilates" />
+    </div>
+    <div class="g-item grande">
+      <img src="imgs/foto-4.jpg" alt="Equipamiento" />
     </div>
   </div>
 </section>
